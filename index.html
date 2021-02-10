@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+
+    <!--Declarando o arquivo de Javascript-->
+    <script type="text/Javascript" src="index.js"></script>
+
+
+    <title>.: EventDash :.</title>
+    <style>
+        .container {
+            border: 3px solid rgb(255, 145, 0);
+            width: 100%;
+            white-space: nowrap;
+            background-color: white;
+        }
+
+        body {
+        background-image:linear-gradient(#DCDCDC, #FFF 200px);
+        background-repeat: no-repeat;
+
+    }
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="col-12">
+
+            <!--Título-->
+            <div class="row">
+
+                <div class="text-center">
+                    <br>
+                    <h3>Sistema EventDash</h3>
+                </div>
+            </div>
+
+            <!--Formulário-->
+                <div class="mb-3">
+                    <label for="txtLogin" class="form-label">Seu Email ou Racf</label>
+                    <input type="text" class="form-control" id="txtLogin" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Atenção às politicas de segurança!</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="txtSenha" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="txtSenha">
+                </div>
+
+                <button type="button" class="btn btn-primary" onclick="logar()">Enviar Dados</button>
+                
+            <br>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3 id="msg">...</h3>
+                </div>
+            </div>
+            <!--
+            <div class="row">
+                <div class="col-02 text-center">
+                    <h3 id="msg">esquerda</h3>
+                </div>
+                <div class="col-08 text-center">
+                    <h3 id="msg">centro</h3>
+                </div>
+                <div class="col-02 text-center">
+                    <h3 id="msg">direita</h3>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
