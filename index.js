@@ -28,9 +28,13 @@ function logar() {
 }
 
 function trataResposta(resposta) {
-    if (resposta.status == 200) {
+    if (resposta.status == 200) {  //caso o retorno seja 200, significa que o login aconteceu com sucesso.
 
-        resposta.json().then(usuario => console.log(usuario));
+        resposta.json().then(usuario => {
+            localStorage.setItem("userDASH", JSON.stringify(usuario));  // armazenei o objeto usuario como String no cache local
+            window.location = "relatorio.html";                        // redireciono para outra página
+
+        });
 
     } else if (resposta.status == 401) {
         document.getElementById("msg").innerHTML = "Senha Inválida";
