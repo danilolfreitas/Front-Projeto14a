@@ -3,20 +3,14 @@ function validaUser(){
     if (!userStr){
         window.location = "index.html";
         return;
+    }else{
+        gerarRelatorio();
     }
 }
 
 function gerarRelatorio(){
-    /*
-    - recuperar os valores digitados nos campos de data
-    - montar a URL para acessar esse back end
-    - ao receber a resposta, extrair o JSON dela e montar o relatório
-    */
 
-    var txtIni = document.getElementById("txtDataInicio").value;
-    var txtFim = document.getElementById("txtDataFim").value;
-
-    var url = `http://localhost:8088/buscarpordata?inicio=${txtIni}&fim=${txtFim}`;
+    var url = `http://localhost:8088/alarmes`;
     
     fetch(url).then(resposta => resposta.json()).then(lista => preencheRelatorio(lista));
 }
@@ -44,7 +38,7 @@ estrutura do objeto evento
 
    var strRelatorio = `<br><br><div class="row">
    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-1 col-xl-1">
-      <b>ID</b>
+     <b>ID</b>
    </div>
    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
       <b>Data do Evento</b>
@@ -64,7 +58,7 @@ estrutura do objeto evento
 </div>`;
 
    for (i=0; i<lista.length; i++){
-       var evento = lista[i];
+       var alarme = lista[i];
 
        strRelatorio = strRelatorio + `<div class="row">
                                           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-1 col-xl-1">
